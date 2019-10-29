@@ -1,0 +1,433 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNSW School of Physics
+% LaTeX Assignment Template
+% Version 1.0 (Updated 21/02/17)
+% Last update by Adam Micolich
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Packages and other configurations for document
+
+\documentclass[paper=a4, fontsize=12pt]{scrartcl}
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx} % Graphics packages
+\usepackage{enumitem} % Lettered List Package
+\usepackage{tikz} % Diagram Package
+\usepackage{xcolor} % Colour Package
+\usepackage{bm} % Bold Maths
+\usepackage{caption} % Table titles
+
+\usepackage{listings} % Code formatting
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeorange}{rgb}{0.7,0.2,0}
+\definecolor{codered}{rgb}{0.7,0,0}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codered},
+    keywordstyle=\color{codeorange},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+% Block below sets up headers and sectioning.
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancy} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead[L]{z5161938 Ian Thorvaldson} %Page header left -- Student number and name
+\fancyhead[C] {} %Page header center -- Empty
+\fancyhead[R]{PHYS1241 Assignment 4 2017} %Page header right -- Course/year
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{\thepage} % center footer -- page numbering
+\fancyfoot[R]{} % Empty right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{12pt} % Customize the height of the header
+%\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+%\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+%\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\normalfont\scshape} % Make all sections default font with small caps
+\renewcommand\thesection{} % Stops from putting section numbers in section headers but keeps numbering working.
+\renewcommand\thesubsection{} % Stops from putting section numbers in section headers but keeps numbering working.
+\renewcommand\thesubsubsection{} % See above
+
+\usepackage{lipsum} % Inserts dummy latin text into template -- Can remove from final submission
+
+% Title block on first page
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	\normalfont \normalsize
+\textsc{UNSW School of Physics} \\ [24pt]
+\horrule{1pt} \\[0.5cm] % Thin top horizontal rule
+\LARGE PHYS1241 Assignment 4 \\ % The assignment title
+\horrule{1pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Ian Thorvaldson z5161938} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}\thispagestyle{empty}
+
+\maketitle % Print the title
+
+\section{Question 1 - Photoelectric Experiment}
+
+\subsection{Q1 Part a - Planck's constant}
+
+If the stopping potential is $U$, the frequency $f$ and the work function of sodium $\phi$ then we know, from Einstein, that
+
+\begin{align*}
+\begin{split}
+U &= hf - \phi\\
+U &= \frac{hc}{\lambda} - \phi\\
+\end{split}
+\end{align*}
+
+Let the stopping potential and wavelengths for the $300nm$ and $400nm$ experiments be $U_1$, $\lambda_1$, $U_2$ and $\lambda_2$ respectively. Then we can simultaneously solve for $h$:
+
+\begin{align}
+U_1 = \frac{hc}{\lambda_1} - \phi ~\label{q1e1}\\
+U_2 = \frac{hc}{\lambda_2} - \phi ~\label{q1e2}
+\end{align}
+
+\clearpage
+
+Subtracting (\ref{q1e2}) from (\ref{q1e1}) we find:
+
+\begin{align*}
+\begin{split}
+U_1 - U_2 &= hc \Big( \frac{1}{\lambda_1} - \frac{1}{\lambda_2} \Big)\\
+h &= \frac{U_1 - U_2}{c \Big( \frac{1}{\lambda_1} - \frac{1}{\lambda_2} \Big)}\\
+&= 4.1 \times 10^{-15} eV s\\
+&= 6.6 \times 10^{-34} J s
+\end{split}
+\end{align*}
+
+Where, of course, all values are rounded to 2 significant figures. This is the correct value (The accepted value is $6.626 \times 10^{-34} eV s$).
+
+\subsection{Q1 Part b - Work function}
+
+We can find $\phi$ by simply substituting the value for $h$ in (\ref{q1e1}):
+
+\begin{align*}
+\begin{split}
+\phi &= \frac{hc}{\lambda_1} - U_1\\
+&= 2.3 eV
+\end{split}
+\end{align*}
+
+This is the correct value of $\phi$ for sodium, as the accepted value is $2.28 eV$ \cite{Workfunctions}.
+
+\subsection{Q1 Part c - Threshold wavelength}
+
+The cutoff wavelength $\lambda$ can now be calculated by:
+
+\begin{align*}
+\begin{split}
+0 &= \frac{hc}{\lambda} - \phi\\
+\lambda &= \frac{hc}{\phi}\\
+&= 540 nm
+\end{split}
+\end{align*}
+
+This is extremely close to the value if derived from previously mentioned accepted values, $\lambda = 546.6 nm$.
+
+\clearpage
+
+\section{Question 2 - Singly Ionised Helium}
+
+According to the derivation of the Bohr model, the total energy of an electron in the $n$\textsuperscript{th} shell is given by
+
+\begin{align*}
+E_n = -E_0\frac{Z^2}{n^2}
+\end{align*}
+
+Where $E_0$ was $13.6 eV$, and ''$0$'' energy is an electron not moving, infinitely far from the nucleus. Importantly, $Z$ is the atomic number of the atom - so for Helium, $Z= 2$. Thus we find the energy of an electron in the $n$th shell of a singly-ionised Helium atom as
+
+\begin{align*}
+E_n = -\frac{54.4}{n^2} eV
+\end{align*}
+
+We can therefore calculate the frequency $f = \frac{\Delta E}{h}$ and wavelength $\lambda = \frac{c}{f}$ of the emission lines of singly-ionised Helium as compared to Hydrogen:
+
+\begin{table}[h]
+\caption {Helium}
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+\hline
+ From & To & Energy ($eV$) & Wavelength ($nm$)\\
+ \hline
+ 4 & 3 & 2.64 & 469\\
+ 6 & 4 & 1.89 & 657\\
+ 7 & 4 & 2.29 & 542\\
+ 8 & 4 & 2.55 & 487\\
+ 9 & 4 & 2.73 & 455\\
+ 11 & 5 & 1.73 & 719\\
+ 12 & 5 & 1.8 & 690\\
+ 13 & 5 & 1.85 & 669\\
+ $\infty$ & 5 & 2.18 & 570\\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\caption {Hydrogen}
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+\hline
+ From & To & Energy ($eV$) & Wavelength ($nm$)\\
+ \hline
+ 3 & 2 & 1.89 & 657\\
+ 4 & 2 & 2.55 & 487\\
+ 5 & 2 & 2.86 & 434\\
+ 6 & 2 & 3.02 & 411\\
+ 7 & 2 & 3.12 & 397\\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Note that only those wavelengths in the visible range have been presented here. To see a more complete list of wavelengths, see Appendix 1.\\\\
+From these values, and noting that the visible wavelength range is $400 - 700 nm$ or so, we can see that Singly-Ionised Helium would have many more visible emission lines than Hydrogen. More importantly, the series of emission lines going to $n=5$ approaches a visible wavelength, $570 nm$. This would be quite faint, as very few electrons would be in shells $n>10$, but if the Helium were very hot then this series of lines would visibly seem to be approaching the limit $\lambda = 570 nm$.
+
+
+\section{Question 3 - Properties of a free electron}
+
+The given wavefunction is:
+
+\begin{align*}
+\psi(x, t) = \sin(kx - \omega t)
+\end{align*}
+
+We know that this function must be periodic in $x$, specifically completing a period every $\lambda$ that $x$ changes. This means that, with the given value of $k$:
+
+\begin{align*}
+\begin{split}
+k(x + \lambda) &= kx + 2\pi\\
+\lambda &= \frac{2 \pi}{k}\\
+\lambda &= 0.13 nm
+\end{split}
+\end{align*}
+
+Momentum is given by DeBroglie's Equation:
+
+\begin{align*}
+\begin{split}
+p &= \frac{h}{\lambda}\\
+p &= 5.3 \times 10^{-24} kg m s^{-1}
+\end{split}
+\end{align*}
+
+Kinetic Energy is found by the usual formula, where $p = mv$:
+
+\begin{align*}
+\begin{split}
+E &= \frac{1}{2}m v^2\\
+&= \frac{1}{2} \frac{p^2}{m_e}\\
+&= 1.5 \times 10^{-17} J
+\end{split}
+\end{align*}
+
+Finally, speed is magnitude of velocity, and the velocity is only one-dimensional (as the wavefunction only has one space variable) so
+
+\begin{align*}
+\begin{split}
+|v| &= |\frac{p}{m_e}|\\
+&= 5.8 \times 10^6 m s^{-1}
+\end{split}
+\end{align*}
+
+\section{Question 4 - Detection of Laser light}
+\subsection{Q4 Part a - Semiconductor materials}
+
+
+This photon would have and energy of:
+
+\begin{align*}
+\begin{split}
+E &= hf\\
+&= \frac{hc}{\lambda}\\
+&= 2.48 eV
+\end{split}
+\end{align*}
+
+The photon must be able to give all of its energy to a single electron in the valence band. As this electron must jump up by the \textit{band gap energy or more}, the band gap energy must be less than or equal to the photon's energy.\\
+The only material that satisfies this is material A. Material B and C would not absorb the photon, as there is not enough energy to excite an electron to the conduction band.\\\\
+
+Material B is actually an insulator, as any material with a band gap $> 3.5 eV$ is considered an insulator \cite{Lectures}; in fact, it is one of the best insulators (The best known insulator is diamond with the same band gap of $6 eV$ \cite{Lectures}). Material C is an unbelievably good insulator, one and a half orders of magnitude better than the best insulator we know.
+
+\subsection{Q4 Part b - Photoelectric Effect}
+
+The photoelectric effect could definitely be used to detect this light - with no backing voltage, electrons would jump off the cathode and produce a current. However, one must consider Einstein's equation for kinetic energy of the electrons $E$, given here in $eV$:
+
+\begin{align*}
+\begin{split}
+E &= hf - \phi\\
+E &= 2.48 - \phi
+\end{split}
+\end{align*}
+
+Note that for the electrons to jump, $E > 0$ so $\phi < 2.48 eV$. Thus, it is important to choose a cathode with a low work-function. These materials appear to be rare compared to cathodes with higher work functions - some possible cathodes are Cesium ($\phi = 2.1 eV$) or Sodium ($\phi = 2.28 eV$) \cite{Workfunctions}.
+
+\clearpage
+
+\begin{thebibliography}{99}
+\bibitem{Lectures} Prof. Mike Gal, "Physical waves", Lectures, {\em UNSW: PHYS1241}
+\bibitem{Workfunctions} R Nave, ''Work Functions for Photoelectric Effect'' {\em Hyperphysics} (2017), found at <http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/photoelec.html>, accessed 26 Oct. 2017
+
+\end{thebibliography}
+
+\section{Appendix 1 - Additional spectral lines of Helium and Hydrogen}
+
+These have been automatically generated. Here is the python source code, which generates data in a LaTeX table format:
+
+\begin{lstlisting}[language=Python]
+import math
+
+h = 4.1357 * 10**(-15) #eV s
+c = 3 * 10**8 #m/s
+
+Z = int(input('Atomic number: '))
+
+E_0 = 13.6 #eV
+
+def round_sigfigs(a, s):
+    most_significant = int(math.floor(math.log10(abs(a))))
+    answer = round(a, -most_significant + s - 1)
+    if -most_significant + s - 1 < 1:
+        answer = int(answer)
+    return answer
+
+for i in range(1, 8):
+    for j in range(i+1, i+6):
+        E_i = -E_0 * Z**2 / (i**2)
+        E_j = -E_0 * Z**2 / (j**2)
+        E = E_j - E_i
+        wavelength_nm = (c*h/E) * 10**9
+        print(' {0} & {1} & {2} & {3}\\\\'.format(
+            j, i, round_sigfigs(E, 3), round_sigfigs(wavelength_nm, 3)))
+
+\end{lstlisting}
+
+All values are rounded to 3 significant figures, but because of how python prints decimals, trailing 0's have been omitted.
+
+\begin{table}[h]
+\caption {Helium}
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+\hline
+ From & To & Energy ($eV$) & Wavelength ($nm$)\\
+ \hline
+ 2 & 1 & 40.8 & 30.4\\
+ 3 & 1 & 48.4 & 25.7\\
+ 4 & 1 & 51.0 & 24.3\\
+ 5 & 1 & 52.2 & 23.8\\
+ 6 & 1 & 52.9 & 23.5\\
+ 3 & 2 & 7.56 & 164\\
+ 4 & 2 & 10.2 & 122\\
+ 5 & 2 & 11.4 & 109\\
+ 6 & 2 & 12.1 & 103\\
+ 7 & 2 & 12.5 & 99.3\\
+ 4 & 3 & 2.64 & 469\\
+ 5 & 3 & 3.87 & 321\\
+ 6 & 3 & 4.53 & 274\\
+ 7 & 3 & 4.93 & 251\\
+ 8 & 3 & 5.19 & 239\\
+ 5 & 4 & 1.22 & 1010\\
+ 6 & 4 & 1.89 & 657\\
+ 7 & 4 & 2.29 & 542\\
+ 8 & 4 & 2.55 & 487\\
+ 9 & 4 & 2.73 & 455\\
+ 6 & 5 & 0.665 & 1870\\
+ 7 & 5 & 1.07 & 1160\\
+ 8 & 5 & 1.33 & 936\\
+ 9 & 5 & 1.5 & 825\\
+ 10 & 5 & 1.63 & 760\\
+ 7 & 6 & 0.401 & 3090\\
+ 8 & 6 & 0.661 & 1880\\
+ 9 & 6 & 0.84 & 1480\\
+ 10 & 6 & 0.967 & 1280\\
+ 11 & 6 & 1.06 & 1170\\
+ 8 & 7 & 0.26 & 4770\\
+ 9 & 7 & 0.439 & 2830\\
+ 10 & 7 & 0.566 & 2190\\
+ 11 & 7 & 0.661 & 1880\\
+ 12 & 7 & 0.732 & 1690\\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\caption {Hydrogen}
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+\hline
+ From & To & Energy ($eV$) & Wavelength ($nm$)\\
+ \hline
+ 2 & 1 & 10.2 & 122\\
+ 3 & 1 & 12.1 & 103\\
+ 4 & 1 & 12.8 & 97.3\\
+ 5 & 1 & 13.1 & 95.0\\
+ 6 & 1 & 13.2 & 93.8\\
+ 3 & 2 & 1.89 & 657\\
+ 4 & 2 & 2.55 & 487\\
+ 5 & 2 & 2.86 & 434\\
+ 6 & 2 & 3.02 & 411\\
+ 7 & 2 & 3.12 & 397\\
+ 4 & 3 & 0.661 & 1880\\
+ 5 & 3 & 0.967 & 1280\\
+ 6 & 3 & 1.13 & 1090\\
+ 7 & 3 & 1.23 & 1010\\
+ 8 & 3 & 1.3 & 955\\
+ 5 & 4 & 0.306 & 4050\\
+ 6 & 4 & 0.472 & 2630\\
+ 7 & 4 & 0.572 & 2170\\
+ 8 & 4 & 0.637 & 1950\\
+ 9 & 4 & 0.682 & 1820\\
+ 6 & 5 & 0.166 & 7460\\
+ 7 & 5 & 0.266 & 4660\\
+ 8 & 5 & 0.332 & 3740\\
+ 9 & 5 & 0.376 & 3300\\
+ 10 & 5 & 0.408 & 3040\\
+ 7 & 6 & 0.1 & 12400\\
+ 8 & 6 & 0.165 & 7510\\
+ 9 & 6 & 0.21 & 5910\\
+ 10 & 6 & 0.242 & 5130\\
+ 11 & 6 & 0.265 & 4680\\
+ 8 & 7 & 0.0651 & 19100\\
+ 9 & 7 & 0.11 & 11300\\
+ 10 & 7 & 0.142 & 8770\\
+ 11 & 7 & 0.165 & 7510\\
+ 12 & 7 & 0.183 & 6780\\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{document} 
