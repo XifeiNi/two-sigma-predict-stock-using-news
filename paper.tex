@@ -175,12 +175,28 @@ age    & child & adult  \\ \hline
 \end{figure}
 \subsubsection{Autoencoder (GAN)}
 An autoencoder is a type of neural network that learns to label dimensions in an unsupervised manner. Figure 5 shows that an autoencoder is composed of two parts: the input side, marked as $X$, and the reconstruction (output) side, marked as $X'$. The $X$ tries to learn a distributed representation of the original data that aims to reduce the dimensions, and the $X'$ side is where the autoencoder tries to generate from the reduced representation as close as possible to its original input, hence its name, reconstruction. 
-\paragraph{Basic Architecture of Autoencoder}
 \begin{figure}
   \includegraphics[width=\linewidth]{Autoencoder_structure.png}
   \caption{Figure 5: Schematic structure of an autoencoder with 3 fully connected hidden layers. The code (z, or h for reference in the text) is the most internal layer.}
   \label{fig:autoencoder}
 \end{figure}
+\paragraph{Basic Architecture of Autoencoder}
+An autoencoder consists of two parts, the encoder and the decoder, which can be defined as transitions $\psi$ and $\phi$, such that:
+\begin{align*}
+& \psi : \chi \mapsto \mathfrak{F} \\
+& \phi : \mathfrak{F} \mapsto \chi \\
+& \psi, \phi = arg_{\psi, \phi} min \lvert \chi - (\psi * \phi) \chi \rvert
+\end{align*}
+In the simplest form, we assume there is only one hidden layer. The encoder stage of the autoencoder takes input $x \in \mathbb{R}^{d} = \chi$ and maps it to $\mathbf{h} \in \mathbb{R}^{p} = \mathfrak{F}$. \\
+\begin{align*}
+\mathbf{h} = \delta (\mathbf{W}x + \mathbf{b})
+\end{align*}
+This image $\mathbf{h}$ is the code section shown in Figure 5. $\delta$ is normally a sigmoid function defined as following: \\
+\begin{align*}
+S(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x + 1}
+\end{align*}
+$\mathbf{W}$ is a weight matrix and $\mathbf{b}$ is a bias vector. The initializations of these two variables are random. They will be learnt iteratively through \textbf{backpropagation}. \\
+
 
 \subsubsection{Neural Network Language Model (NNLM)}
 
