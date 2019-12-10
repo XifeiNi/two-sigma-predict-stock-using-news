@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{General Word Embedding Models}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{First Attempt: Hot One Encoding}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Second Attempt: Bag of Words \(BoW\) Model}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Third Attempt: Neural Network Based \(NNLM\)}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Autoencoder \(GAN\)}{subsection.2.3}% 6
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Neural Network Language Model \(NNLM\)}{subsection.2.3}% 7
+\BOOKMARK [2][-]{subsection.2.4}{Fourth Attempt: Non-NN Model}{section.2}% 8

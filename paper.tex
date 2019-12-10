@@ -9,6 +9,11 @@
 
 \documentclass[paper=a4, fontsize=12pt]{scrartcl}
 
+\usepackage{url}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 \usepackage[english]{babel} % English language/hyphenation
@@ -55,7 +60,7 @@
 \pagestyle{fancy} % Makes all pages in the document conform to the custom headers and footers
 \fancyhead[L]{z5173159 Cecilia Xifei Ni} %Page header left -- Student number and name
 \fancyhead[C] {} %Page header center -- Empty
-\fancyhead[R]{Predict Stock Movements Using News} %Page header right -- Course/year
+\fancyhead[R]{Word Embedding and Question Answering} %Page header right -- Course/year
 \fancyfoot[L]{} % Empty left footer
 \fancyfoot[C]{\thepage} % center footer -- page numbering
 \fancyfoot[R]{} % Empty right footer
@@ -82,7 +87,7 @@
 \title{	\normalfont \normalsize
 \textsc{UNSW School of Computer Science and Engineering} \\ [24pt]
 \horrule{1pt} \\[0.5cm] % Thin top horizontal rule
-\LARGE Predict Stock Movements Using News \\ % The assignment title
+\LARGE Word Embedding and Question Answering \\ % The assignment title
 \horrule{1pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -93,206 +98,98 @@
 \begin{document}\thispagestyle{empty}
 
 \maketitle % Print the title
+\section{Introduction}
+\begin{figure}
+  \includegraphics[width=\linewidth]{google.png}
+  \caption{A result returned by Google to answer "Who is the first Prime Minister of Australia?"}
+  \label{fig:google}
+\end{figure}
+"Who is the first Prime Minister of Australia?" \\\\
+%% insert image
+Figure 1 is a screen shot of search result returning by Google. This is a question a Question Answering (QA) system should be able to respond to. QA system evaluates texts across the web or database to find answer of a particular question to return in a form of short text.\\\\
+Current machine algorithms extracts answer from a short paragraph instead of a long content (e.g. an entire wiki page/a news article). When applying modern machine learning algorithms on a long content, the result can be complicated and lenthy. \\\\
+This essay aims to firstly gives a mathematical heavy explanation on nowadays natural language processing (NLP) algorithms, then propose my own heuristics based on them to predict answers from a long content based on the question being asked. \\\\
+My algorithm will be tested with \href{https://ai.google.com/research/NaturalQuestions/dataset}{Google Natural Questions} which contains its own private testing dataset. 
+\section{General Word Embedding Models}
+\textbf{Word Embedding} is the collective name for techniques in NLP  where words or phrases are mapped into vectors of real numbers. \\\\
+As per all machine learning algorithms, the general philosophy is to find the minimum of a converged function. When trying to convert words to number, its original utf code will not work well. What we need is a hard-coded map between the word itself, and its semantics. As human, we learn these semantics from daily experience which machine has no way to access, therefore, we need a mapping from words and its semantic in order for machine to decode.
+\subsection{First Attempt: Hot One Encoding}
+Given a collection of $N$ unique words, each word is of size $N$. The vector is very sparse such that only one index is 1 and others are 0. This is to say each word is a \textbf{dimension}. \\\\
+\begin{figure}
+  \includegraphics[width=\linewidth]{vectors.png}
+  \caption{One Hot Encoding Example.}
+  \label{fig:vector}
+\end{figure}
+Figure \ref{fig:vector} shows an example of hot encoding. \\\\
+However, this model has some significant drawbacks. Firstly, it probably works fine for English as it has roughly 8000 frequent words. However, for languages like Chinese or Japanese, they are character-based, and each character will generate tons of combinations. This model will suffer from dramatic increase in dimensionalities. Secondly, all vectors in the matrix are independent to each other, while we do want them to learn the inter-connections between them.
 
-\section{Question 1 - Photoelectric Experiment}
-
-\subsection{Q1 Part a - Planck's constant}
-
-If the stopping potential is $U$, the frequency $f$ and the work function of sodium $\phi$ then we know, from Einstein, that
-
-\begin{align*}
-\begin{split}
-U &= hf - \phi\\
-U &= \frac{hc}{\lambda} - \phi\\
-\end{split}
-\end{align*}
-
-Let the stopping potential and wavelengths for the $300nm$ and $400nm$ experiments be $U_1$, $\lambda_1$, $U_2$ and $\lambda_2$ respectively. Then we can simultaneously solve for $h$:
-
+\subsection{Second Attempt: Bag of Words (BoW) Model}
+ On the second attempt, we focus more on extracting information from the perspective of the whole document. Under this model, we represent words in a document as a bag (multiset) of words-- we discard order and grammar, and only keep its multiplicity.\\\\
+Here is an example:\\
+Document 1: "George" "likes" "to" "play" "video" "games", "Mary" "likes" "video" "games" "too".\\
+Document 2: "Mary" "also" "likes" "movies".\\\\
+The BoW representation of the two above documentations is\\\\
+BoW1: \{"George" : 1, "likes : 2", "to" : 1, "play " : 2, "video" : 2, "games" : 2, "Mary" : 1,  "too": 1\}\\
+BoW2: \{"Mary" : 1, "also" : 1, "likes": 1, "movie" : 1\}\\
+Here, each key is the word, and the value corresponds to occurrence. \\
+\begin{figure}
+  \includegraphics[width=\linewidth]{bow.png}
+  \caption{Bag of Words Vector Space Representation}
+  \label{fig:bow}
+\end{figure}
+This approach could be potentially used to compare similarities between two documents. When comparing them, we construct two vectors with each index corresponding to each unique words. Each be the count of the word appeared in that specific document. 
+% more on cosine similarities/ euclidean distance.
+The similarities of two documents can be measured by its Euclidean distance or its consine similarities. \\\\
+Intuitively, two documents are similar if their vector points to the similar direction. We define the cosine similarities of two documents as: \\
 \begin{align}
-U_1 = \frac{hc}{\lambda_1} - \phi ~\label{q1e1}\\
-U_2 = \frac{hc}{\lambda_2} - \phi ~\label{q1e2}
+cosim(U_k, U_i) = \frac{\langle U_k, U_i \rangle}{\lVert U_k \rVert \cdot \lVert U_i \rVert}
 \end{align}
+where $\langle U_k, U_i \rangle$ is the scalar product of $U_i$ and $U_k$. 
 
-\clearpage
-
-Subtracting (\ref{q1e2}) from (\ref{q1e1}) we find:
-
-\begin{align*}
-\begin{split}
-U_1 - U_2 &= hc \Big( \frac{1}{\lambda_1} - \frac{1}{\lambda_2} \Big)\\
-h &= \frac{U_1 - U_2}{c \Big( \frac{1}{\lambda_1} - \frac{1}{\lambda_2} \Big)}\\
-&= 4.1 \times 10^{-15} eV s\\
-&= 6.6 \times 10^{-34} J s
-\end{split}
-\end{align*}
-
-Where, of course, all values are rounded to 2 significant figures. This is the correct value (The accepted value is $6.626 \times 10^{-34} eV s$).
-
-\subsection{Q1 Part b - Work function}
-
-We can find $\phi$ by simply substituting the value for $h$ in (\ref{q1e1}):
-
-\begin{align*}
-\begin{split}
-\phi &= \frac{hc}{\lambda_1} - U_1\\
-&= 2.3 eV
-\end{split}
-\end{align*}
-
-This is the correct value of $\phi$ for sodium, as the accepted value is $2.28 eV$ \cite{Workfunctions}.
-
-\subsection{Q1 Part c - Threshold wavelength}
-
-The cutoff wavelength $\lambda$ can now be calculated by:
-
-\begin{align*}
-\begin{split}
-0 &= \frac{hc}{\lambda} - \phi\\
-\lambda &= \frac{hc}{\phi}\\
-&= 540 nm
-\end{split}
-\end{align*}
-
-This is extremely close to the value if derived from previously mentioned accepted values, $\lambda = 546.6 nm$.
-
-\clearpage
-
-\section{Question 2 - Singly Ionised Helium}
-
-According to the derivation of the Bohr model, the total energy of an electron in the $n$\textsuperscript{th} shell is given by
-
-\begin{align*}
-E_n = -E_0\frac{Z^2}{n^2}
-\end{align*}
-
-Where $E_0$ was $13.6 eV$, and ''$0$'' energy is an electron not moving, infinitely far from the nucleus. Importantly, $Z$ is the atomic number of the atom - so for Helium, $Z= 2$. Thus we find the energy of an electron in the $n$th shell of a singly-ionised Helium atom as
-
-\begin{align*}
-E_n = -\frac{54.4}{n^2} eV
-\end{align*}
-
-We can therefore calculate the frequency $f = \frac{\Delta E}{h}$ and wavelength $\lambda = \frac{c}{f}$ of the emission lines of singly-ionised Helium as compared to Hydrogen:
-
-\begin{table}[h]
-\caption {Helium}
-\begin{center}
-\begin{tabular}{| c | c | c | c |}
+\subsection{Third Attempt: Neural Network Based (NNLM)}
+One intuitive question to ask is, Bag of Words and One Hot Encoding both treat each words as a separate dimension, but do we need so many dimensions?\\\\
+The answer is probably no. Because a lot of words are similar or related. e.g. \\\\
+Nouns: dog, cat, pet.\\
+Verbs: fish, fished, fishing. \\
+Adjective: very, great, significant. \\
+Context: play {guitar, piano, games, tennis}\\\\
+To not feel overwhelmed by the math at first, let's start with a easy example: \\
+Words to be processed: boy, girl, woman, man \\
+We can simply divide these words into two dimensions: gender and age as per Table 1 shows. This method is called \textbf{Distributed Representation}.\\\\
+However, human language are so complex that we are not able to pre-define all dimensions for all words. Therefore we want to train a function $\mathbf{f}$ to get the word embedding for us. Figure 4 shows the function mapping. \\\\
+To the best of my knowledge, we can do this in two ways. 
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
 \hline
- From & To & Energy ($eV$) & Wavelength ($nm$)\\
- \hline
- 4 & 3 & 2.64 & 469\\
- 6 & 4 & 1.89 & 657\\
- 7 & 4 & 2.29 & 542\\
- 8 & 4 & 2.55 & 487\\
- 9 & 4 & 2.73 & 455\\
- 11 & 5 & 1.73 & 719\\
- 12 & 5 & 1.8 & 690\\
- 13 & 5 & 1.85 & 669\\
- $\infty$ & 5 & 2.18 & 570\\
- \hline
+       & 0     & 1      \\ \hline
+gender & male  & female \\ \hline
+age    & child & adult  \\ \hline
 \end{tabular}
-\end{center}
+\caption{Table 1: Represent Words in Fewer Dimensions}
 \end{table}
 
-\begin{table}[h]
-\caption {Hydrogen}
-\begin{center}
-\begin{tabular}{| c | c | c | c |}
-\hline
- From & To & Energy ($eV$) & Wavelength ($nm$)\\
- \hline
- 3 & 2 & 1.89 & 657\\
- 4 & 2 & 2.55 & 487\\
- 5 & 2 & 2.86 & 434\\
- 6 & 2 & 3.02 & 411\\
- 7 & 2 & 3.12 & 397\\
- \hline
-\end{tabular}
-\end{center}
-\end{table}
+\begin{figure}
+  \includegraphics[width=\linewidth]{nnlm.png}
+  \caption{Figure 4: Neural Network Based Mapping}
+  \label{fig:nnlm}
+\end{figure}
+\subsubsection{Autoencoder (GAN)}
+An autoencoder is a type of neural network that learns to label dimensions in an unsupervised manner. Figure 5 shows that an autoencoder is composed of two parts: the input side, marked as $X$, and the reconstruction (output) side, marked as $X'$. The $X$ tries to learn a distributed representation of the original data that aims to reduce the dimensions, and the $X'$ side is where the autoencoder tries to generate from the reduced representation as close as possible to its original input, hence its name, reconstruction. 
+\paragraph{Basic Architecture of Autoencoder}
+\begin{figure}
+  \includegraphics[width=\linewidth]{Autoencoder_structure.png}
+  \caption{Figure 5: Schematic structure of an autoencoder with 3 fully connected hidden layers. The code (z, or h for reference in the text) is the most internal layer.}
+  \label{fig:autoencoder}
+\end{figure}
 
-Note that only those wavelengths in the visible range have been presented here. To see a more complete list of wavelengths, see Appendix 1.\\\\
-From these values, and noting that the visible wavelength range is $400 - 700 nm$ or so, we can see that Singly-Ionised Helium would have many more visible emission lines than Hydrogen. More importantly, the series of emission lines going to $n=5$ approaches a visible wavelength, $570 nm$. This would be quite faint, as very few electrons would be in shells $n>10$, but if the Helium were very hot then this series of lines would visibly seem to be approaching the limit $\lambda = 570 nm$.
+\subsubsection{Neural Network Language Model (NNLM)}
+
+\subsection{Fourth Attempt: Non-NN Model}
 
 
-\section{Question 3 - Properties of a free electron}
-
-The given wavefunction is:
-
-\begin{align*}
-\psi(x, t) = \sin(kx - \omega t)
-\end{align*}
-
-We know that this function must be periodic in $x$, specifically completing a period every $\lambda$ that $x$ changes. This means that, with the given value of $k$:
-
-\begin{align*}
-\begin{split}
-k(x + \lambda) &= kx + 2\pi\\
-\lambda &= \frac{2 \pi}{k}\\
-\lambda &= 0.13 nm
-\end{split}
-\end{align*}
-
-Momentum is given by DeBroglie's Equation:
-
-\begin{align*}
-\begin{split}
-p &= \frac{h}{\lambda}\\
-p &= 5.3 \times 10^{-24} kg m s^{-1}
-\end{split}
-\end{align*}
-
-Kinetic Energy is found by the usual formula, where $p = mv$:
-
-\begin{align*}
-\begin{split}
-E &= \frac{1}{2}m v^2\\
-&= \frac{1}{2} \frac{p^2}{m_e}\\
-&= 1.5 \times 10^{-17} J
-\end{split}
-\end{align*}
-
-Finally, speed is magnitude of velocity, and the velocity is only one-dimensional (as the wavefunction only has one space variable) so
-
-\begin{align*}
-\begin{split}
-|v| &= |\frac{p}{m_e}|\\
-&= 5.8 \times 10^6 m s^{-1}
-\end{split}
-\end{align*}
-
-\section{Question 4 - Detection of Laser light}
-\subsection{Q4 Part a - Semiconductor materials}
 
 
-This photon would have and energy of:
 
-\begin{align*}
-\begin{split}
-E &= hf\\
-&= \frac{hc}{\lambda}\\
-&= 2.48 eV
-\end{split}
-\end{align*}
-
-The photon must be able to give all of its energy to a single electron in the valence band. As this electron must jump up by the \textit{band gap energy or more}, the band gap energy must be less than or equal to the photon's energy.\\
-The only material that satisfies this is material A. Material B and C would not absorb the photon, as there is not enough energy to excite an electron to the conduction band.\\\\
-
-Material B is actually an insulator, as any material with a band gap $> 3.5 eV$ is considered an insulator \cite{Lectures}; in fact, it is one of the best insulators (The best known insulator is diamond with the same band gap of $6 eV$ \cite{Lectures}). Material C is an unbelievably good insulator, one and a half orders of magnitude better than the best insulator we know.
-
-\subsection{Q4 Part b - Photoelectric Effect}
-
-The photoelectric effect could definitely be used to detect this light - with no backing voltage, electrons would jump off the cathode and produce a current. However, one must consider Einstein's equation for kinetic energy of the electrons $E$, given here in $eV$:
-
-\begin{align*}
-\begin{split}
-E &= hf - \phi\\
-E &= 2.48 - \phi
-\end{split}
-\end{align*}
-
-Note that for the electrons to jump, $E > 0$ so $\phi < 2.48 eV$. Thus, it is important to choose a cathode with a low work-function. These materials appear to be rare compared to cathodes with higher work functions - some possible cathodes are Cesium ($\phi = 2.1 eV$) or Sodium ($\phi = 2.28 eV$) \cite{Workfunctions}.
 
 \clearpage
 
@@ -302,132 +199,6 @@ Note that for the electrons to jump, $E > 0$ so $\phi < 2.48 eV$. Thus, it is im
 
 \end{thebibliography}
 
-\section{Appendix 1 - Additional spectral lines of Helium and Hydrogen}
 
-These have been automatically generated. Here is the python source code, which generates data in a LaTeX table format:
-
-\begin{lstlisting}[language=Python]
-import math
-
-h = 4.1357 * 10**(-15) #eV s
-c = 3 * 10**8 #m/s
-
-Z = int(input('Atomic number: '))
-
-E_0 = 13.6 #eV
-
-def round_sigfigs(a, s):
-    most_significant = int(math.floor(math.log10(abs(a))))
-    answer = round(a, -most_significant + s - 1)
-    if -most_significant + s - 1 < 1:
-        answer = int(answer)
-    return answer
-
-for i in range(1, 8):
-    for j in range(i+1, i+6):
-        E_i = -E_0 * Z**2 / (i**2)
-        E_j = -E_0 * Z**2 / (j**2)
-        E = E_j - E_i
-        wavelength_nm = (c*h/E) * 10**9
-        print(' {0} & {1} & {2} & {3}\\\\'.format(
-            j, i, round_sigfigs(E, 3), round_sigfigs(wavelength_nm, 3)))
-
-\end{lstlisting}
-
-All values are rounded to 3 significant figures, but because of how python prints decimals, trailing 0's have been omitted.
-
-\begin{table}[h]
-\caption {Helium}
-\begin{center}
-\begin{tabular}{| c | c | c | c |}
-\hline
- From & To & Energy ($eV$) & Wavelength ($nm$)\\
- \hline
- 2 & 1 & 40.8 & 30.4\\
- 3 & 1 & 48.4 & 25.7\\
- 4 & 1 & 51.0 & 24.3\\
- 5 & 1 & 52.2 & 23.8\\
- 6 & 1 & 52.9 & 23.5\\
- 3 & 2 & 7.56 & 164\\
- 4 & 2 & 10.2 & 122\\
- 5 & 2 & 11.4 & 109\\
- 6 & 2 & 12.1 & 103\\
- 7 & 2 & 12.5 & 99.3\\
- 4 & 3 & 2.64 & 469\\
- 5 & 3 & 3.87 & 321\\
- 6 & 3 & 4.53 & 274\\
- 7 & 3 & 4.93 & 251\\
- 8 & 3 & 5.19 & 239\\
- 5 & 4 & 1.22 & 1010\\
- 6 & 4 & 1.89 & 657\\
- 7 & 4 & 2.29 & 542\\
- 8 & 4 & 2.55 & 487\\
- 9 & 4 & 2.73 & 455\\
- 6 & 5 & 0.665 & 1870\\
- 7 & 5 & 1.07 & 1160\\
- 8 & 5 & 1.33 & 936\\
- 9 & 5 & 1.5 & 825\\
- 10 & 5 & 1.63 & 760\\
- 7 & 6 & 0.401 & 3090\\
- 8 & 6 & 0.661 & 1880\\
- 9 & 6 & 0.84 & 1480\\
- 10 & 6 & 0.967 & 1280\\
- 11 & 6 & 1.06 & 1170\\
- 8 & 7 & 0.26 & 4770\\
- 9 & 7 & 0.439 & 2830\\
- 10 & 7 & 0.566 & 2190\\
- 11 & 7 & 0.661 & 1880\\
- 12 & 7 & 0.732 & 1690\\
- \hline
-\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}[h]
-\caption {Hydrogen}
-\begin{center}
-\begin{tabular}{| c | c | c | c |}
-\hline
- From & To & Energy ($eV$) & Wavelength ($nm$)\\
- \hline
- 2 & 1 & 10.2 & 122\\
- 3 & 1 & 12.1 & 103\\
- 4 & 1 & 12.8 & 97.3\\
- 5 & 1 & 13.1 & 95.0\\
- 6 & 1 & 13.2 & 93.8\\
- 3 & 2 & 1.89 & 657\\
- 4 & 2 & 2.55 & 487\\
- 5 & 2 & 2.86 & 434\\
- 6 & 2 & 3.02 & 411\\
- 7 & 2 & 3.12 & 397\\
- 4 & 3 & 0.661 & 1880\\
- 5 & 3 & 0.967 & 1280\\
- 6 & 3 & 1.13 & 1090\\
- 7 & 3 & 1.23 & 1010\\
- 8 & 3 & 1.3 & 955\\
- 5 & 4 & 0.306 & 4050\\
- 6 & 4 & 0.472 & 2630\\
- 7 & 4 & 0.572 & 2170\\
- 8 & 4 & 0.637 & 1950\\
- 9 & 4 & 0.682 & 1820\\
- 6 & 5 & 0.166 & 7460\\
- 7 & 5 & 0.266 & 4660\\
- 8 & 5 & 0.332 & 3740\\
- 9 & 5 & 0.376 & 3300\\
- 10 & 5 & 0.408 & 3040\\
- 7 & 6 & 0.1 & 12400\\
- 8 & 6 & 0.165 & 7510\\
- 9 & 6 & 0.21 & 5910\\
- 10 & 6 & 0.242 & 5130\\
- 11 & 6 & 0.265 & 4680\\
- 8 & 7 & 0.0651 & 19100\\
- 9 & 7 & 0.11 & 11300\\
- 10 & 7 & 0.142 & 8770\\
- 11 & 7 & 0.165 & 7510\\
- 12 & 7 & 0.183 & 6780\\
- \hline
-\end{tabular}
-\end{center}
-\end{table}
 
 \end{document} 
