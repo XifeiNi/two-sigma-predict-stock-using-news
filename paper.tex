@@ -108,7 +108,7 @@
 %% insert image
 Figure 1 is a screen shot of search result returning by Google. This is a question a Question Answering (QA) system should be able to respond to. QA system evaluates texts across the web or database to find answer of a particular question to return in a form of short text.\\\\
 Current machine algorithms extracts answer from a short paragraph instead of a long content (e.g. an entire wiki page/a news article). When applying modern machine learning algorithms on a long content, the result can be complicated and lenthy. \\\\
-This essay aims to firstly gives a mathematical heavy explanation on nowadays natural language processing (NLP) algorithms, then propose my own heuristics based on them to predict answers from a long content based on the question being asked. \\\\
+This essay aims to firstly gives a mathematical heavy explanation on nowadays natural language processing (NLP) algorithms on word embedding, then propose my own heuristics based on them to predict answers from a long content based on the question being asked. \\\\
 My algorithm will be tested with \href{https://ai.google.com/research/NaturalQuestions/dataset}{Google Natural Questions} which contains its own private testing dataset. 
 \section{General Word Embedding Models}
 \textbf{Word Embedding} is the collective name for techniques in NLP  where words or phrases are mapped into vectors of real numbers. \\\\
@@ -177,7 +177,7 @@ age    & child & adult  \\ \hline
 An autoencoder is a type of neural network that learns to label dimensions in an unsupervised manner. Figure 5 shows that an autoencoder is composed of two parts: the input side, marked as $X$, and the reconstruction (output) side, marked as $X'$. The $X$ tries to learn a distributed representation of the original data that aims to reduce the dimensions, and the $X'$ side is where the autoencoder tries to generate from the reduced representation as close as possible to its original input, hence its name, reconstruction. 
 \begin{figure}
   \includegraphics[width=\linewidth]{Autoencoder_structure.png}
-  \caption{Figure 5: Schematic structure of an autoencoder with 3 fully connected hidden layers. The code (z, or h for reference in the text) is the most internal layer.}
+  \caption{Schematic structure of an autoencoder with 3 fully connected hidden layers. The code (z, or h for reference in the text) is the most internal layer.}
   \label{fig:autoencoder}
 \end{figure}
 \paragraph{Basic Architecture of Autoencoder}
@@ -224,10 +224,116 @@ Where the loss function is defined as:
 \end{align*}
 where $x$ is the average across all inputs.
 \subsubsection{Neural Network Language Model (NNLM)}
-
-\subsection{Fourth Attempt: Non-NN Model}
-
-
+However, the above model does not fully utilize the context of words, as in words in this category:\\
+Context: play {guitar, piano, games, tennis}\\\\
+More specifically, autoencoder does generate vectors that significantly reduce the dimensions compared to previous attempts but it takes into account less than 1 or two words, hence it is not so great at predicting the next word based on the previous context. \\
+Bengio proposed the following model that makes use of the word order in a document. It can be presented by the conditional probability of the next word given all the previous ones:
+\begin{align*}
+\hat{P} (w^{T}_1) = \prod^T_{t=1} \hat{P} (w_t | w^{t-1}_1)
+\end{align*}
+where $w_t$ is the t-th word.\\\\
+In more details: \\\\
+The training set is $w_1, w_2, ... w_t \in V$, where $V$ is the vocabulary set that is roughly of size $10^5$ depending on language. \\
+We need to learn $f(w_t, ..., w_{t-n+1})= \hat{P} (w_t | w^{t-1}_1)$, in the sense it gives highest likelihood of the next word.\\
+This is subject to constraints that: \\
+For any choice of $w^{t-1}_1$
+\begin{align*}
+& \sum_{i=1}^{\lvert V \rvert} f(i, w_t, ..., w_{t-n+1}) = 1 \\
+& f > 0
+\end{align*}
+The function $f(w_t, ..., w_{t-n+1})= \hat{P} (w_t | w^{t-1}_1)$ has two parts: \\
+ 1. $\mathbb{C}$ : $w_i \rightarrow \mathbb{C}(w_i) \in \mathbb{R}^m$ where $m$ ranges from 30 to 100, which is significant smaller than the size of $V$ and $w_i \in V$.\\
+ 2. A probability function over words: \\
+ A function $g$ that maps an input sequence of words $(\mathbb{C}(w_{t-n+1}), ..., \mathbb{C}(w_{t-1})$ to the next word $w_t \in V$.
+ \begin{align*}
+ f(i, w_t, ..., w_{t-n+1}) = g(i, \mathbb{C}(w_{t-1}, ...,  C(w_{t-n+1}))
+ \end{align*}
+ $\mathbb{C}$ is being shared for the whole neural network. $\mathbb{C}$ simply maps a word $w_t \in V$ to a \textit{feature vector} of $\mathbb{R}^m$ shown as \textbf{figure 7}.\\\\
+ \begin{figure}
+  \includegraphics[width=\linewidth]{neuralnet.png}
+  \caption{Neural Architecture}
+  \label{fig:nnlm}
+\end{figure}
+The function $g$ might be implemented by a feed-forward or recurrent neural network with parameter $\omega$. The overall parameter set is $\theta = (\mathbb{C}, \omega)$\\\\
+Training aims to maximize $\omega$ the log-likelihood.
+\begin{align*}
+L = \frac{1}{T}\sum_{t}log f(w_t, w_{t-1}, ..., w_{t-n+1}; \theta) + R(\theta)
+\end{align*}
+where $R$ is a regularization form. \\\\
+The \textit{softmax} output layer in figure 7 grants the positive probabilities summing up to 1:
+\begin{align*}
+\hat{P}(w_t | w_{t-1}, ..., w_{t-n+1}) = \frac{e^{yw_t}}{\sum_{i} e^{y_i}}
+\end{align*}
+The $y_i$ is the log probability for each possible output word $w_i \in V$, defined as follows:
+\begin{align*}
+y = b+Wx+U tanh(d +Hx)
+\end{align*}
+as figure 7 shows, $tanh$ is applied on each word. $W$ is the weight matrix we described in the previous attempt. $x$ is the word feature activation vector that is a concatenation from $\mathbb{C}(w_i)$
+\begin{align*}
+x = \mathbb{C}(w_{t-1}), \mathbb{C}(w_{t-1}), ..., \mathbb{C}(w_{t-n+1})
+\end{align*}
+$b$ and $d$ are biases which are addictive parameter in neural networks that only have outgoing edges but no incoming edges. Its existence is mainly to not let function passing the origin. 
+Here is a intuitive example of training results: \\
+\texttt{cat} and \texttt{dog} plays similar role in linguistic, syntactically and semantically. \texttt{backyard} and \texttt{frontyard} also plays similar role. \texttt{running} and \texttt{walking} is also a pair. \texttt{is} and \texttt{was} are also quite similar. \\
+From the probability mass of them, we can simply transform:\\
+\texttt{A cat is walking at frontyard} \\
+to \texttt{A dog is walking at the frontyard} \\
+to \texttt{A dog is running at the frontyard} \\
+to \texttt{A dog was running at the frontyard} \\
+to \texttt{A dog was running at the backyard}
+\subsection{Fourth Attempt: Word2Vec}
+The above attempt only considers "context" before certain word. However, in 2013, a paper published by Mikolov and Jeff Dean proposed a famous model, Word2Vec, that considers bidirectional context, i.e. context before and after the predicting word. \\\\
+It has a very similar structure as the attempt we elaborated above, but it is more focusing on \textbf{Word Embedding}, i.e. representing a word in vector form,  instead of predicting the word based on preceding context.\\\\
+Word2Vec is a two-layer neural net that takes a input word and output it as a feature vector. The core purpose is to gather similar word into the same vector space by calculatingthe probabilities --the likelihood that they will co-occur.\\\\
+It has the following two approaches. 
+\subsubsection{Continuous Bag-of-Word (CBOW)}
+ \begin{figure}
+  \includegraphics[scale=1]{cbow.jpg}
+  \caption{Continuous Bag-of-Words}
+  \label{fig:cbow}
+\end{figure}
+The aim of CBOW is the predict the middle word given the words surrounding it. \\
+For example, \textit{ \{ I ?? video games \}} $\rightarrow$ \textit{\{play\}}\\\\
+As figure 7 shows, this is quite similar to the feed-forward neural network described above.  It removes all the hidden layers, and its projection layer is shared among all words, where the projection layer is either sum or average of all the vectors of the words. Note that despite its name being "Bag-of-words", it bears no relevance to the first attempt we mentioned above. 
+\subsubsection{Continuous Skip-gram(Skip Gram)}
+ \begin{figure}
+  \includegraphics[scale=1]{skip-gram.jpg}
+  \caption{Continuous Skip-Gram}
+  \label{fig:skip-gram}
+\end{figure}
+Opposite to CBOW model, the objective of \textit{skip gram} is to predict surrounding words from a single word, as shown in figure 8.\\\\
+Given a sequence of words $w_1, w_2, w_3, ..., w_n$, similar to the maximization of log-likelihood described in the third attempt, the goal of the Skip-gram model is to maximize the average log probability:
+\begin{align*}
+\frac{1}{T}\sum_{t=1}^{T} \sum_{-c \leq j \leq c, j \neq 0} log p (w_{t+j} | w_t)
+\end{align*}
+where $c$ is the training size. Obviously, larger $c$ will lead to higher accuracy, in the cost of trading run time. We define $p (w_{t+j} | w_t)$ using the \textit{softmax} function. 
+\begin{align*}
+p(w_O | w_I) = \frac{exp(x^T_{w_O}  v_{w_I})}{\sum^W_{w=1}exp(x^T_{w_O} v_{w_I})}
+\end{align*}
+where $x_w$ and $v_w$ are input and output shown in \textbf{figure 8}. $W$ is the size of vocabulary in the language we trained in. 
+\subsubsection{Refinement of Word2Vec}
+\textbf{Word2Vec} is a quite expensive algorithm just because of the significant time it takes to run it. \\
+The training complexity of the architecture is proportional to  
+\begin{align*}
+Q = C \times (D + D \times log_2(V ))
+\end{align*}
+where $C$ is the maximum distance of the words.\\\\
+However. there are several ways we can improve its run-time.
+\subparagraph{Hierarchical Softmax}
+This model in natural probabilistic language was firstly proposed by Morin and Bengio. The main advantage is that this model improves searching $W$ to $log_2{W}$.\\\\
+ \begin{figure}
+  \includegraphics[scale=1]{softmax.png}
+  \caption{Hierarchical Softmax Model}
+  \label{fig:skip-gram}
+\end{figure}
+The \textbf{Hierarchical Softmax} uses a binary tree representation that represents $W$ words. For each node, its child nodes' probabilities are explicitly represented. \\\\
+More intuitively, each node can be reached by traversing from the root of the tree. Nodes that are further down the tree have less probability of being selected as output. \\\\
+Let $n(w, j)$ be the $j$-th node on the path from root $w$, and let $L(w)$ be the length of the path. therefore,
+\begin{align*}
+& n(w, 1) = root \\
+& n(w, L(w)) = w
+\end{align*}
+\subparagraph{Negative Sampling}
 
 
 

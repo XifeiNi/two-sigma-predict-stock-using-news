@@ -5,4 +5,7 @@
 \BOOKMARK [2][-]{subsection.2.3}{Third Attempt: Neural Network Based \(NNLM\)}{section.2}% 5
 \BOOKMARK [3][-]{subsubsection.2.3.1}{Autoencoder \(GAN\)}{subsection.2.3}% 6
 \BOOKMARK [3][-]{subsubsection.2.3.2}{Neural Network Language Model \(NNLM\)}{subsection.2.3}% 7
-\BOOKMARK [2][-]{subsection.2.4}{Fourth Attempt: Non-NN Model}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{Fourth Attempt: Word2Vec}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Continuous Bag-of-Word \(CBOW\)}{subsection.2.4}% 9
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Continuous Skip-gram\(Skip Gram\)}{subsection.2.4}% 10
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Refinement of Word2Vec}{subsection.2.4}% 11
