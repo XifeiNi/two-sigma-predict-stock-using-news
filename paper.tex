@@ -10,6 +10,7 @@
 \documentclass[paper=a4, fontsize=12pt]{scrartcl}
 
 \usepackage{url}
+\usepackage{amsmath}
 
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -333,7 +334,26 @@ Let $n(w, j)$ be the $j$-th node on the path from root $w$, and let $L(w)$ be th
 & n(w, 1) = root \\
 & n(w, L(w)) = w
 \end{align*}
-\subparagraph{Negative Sampling}
+For any inner node $n$, let $mid(n)$ be an arbitrary fixed child of $n$, and define $\| x \|$ as
+\[ \begin{cases} 
+      0 & x \ is \  false\\
+      1 & x \ is \ true
+   \end{cases}
+\]
+Then we define \textbf{Hierarchical Softmax} $p(w_O | w_I)$ as follows
+\begin{align*}
+p(w_O | w_I) = \prod^{L(w)-1}_{j = 1} \sigma ( \| n(w, j + 1) = mid(n(w, j))\| x_{n(w, j)}^{T} v_{w_j} )
+\end{align*}
+where $\sigma$ is defined as
+\begin{align*}
+\sigma(x) = \frac{1}{1 + exp(-x)}
+\end{align*}
+Also
+\begin{align*}
+\sum^W_{w = 1} p(w | w_I) = 1
+\end{align*}
+The above fomulas indicates that the computational cost is proportional to $L(w_O)$, which on average is smaller than $logW$.
+\subparagraph{Negative Sampling} This model has another name called \textbf{Noise Contrastive Estimation (NCE)}
 
 
 

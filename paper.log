@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.12)  12 DEC 2019 03:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.12)  12 DEC 2019 04:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -96,6 +96,64 @@ Class scrartcl Info: Redefining `\numberline' on input line 5615.
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip57
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip11
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks16
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip58
+\multlinetaggap=\skip59
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
@@ -152,16 +210,16 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen103
-\Hy@linkcounter=\count89
-\Hy@pagecounter=\count90
+\@linkdim=\dimen112
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count91
+\Hy@SavedSpaceFactor=\count103
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -173,12 +231,12 @@ Package hyperref Info: Plain pages OFF on input line 4524.
 Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count92
+\c@Hy@tempcnt=\count104
 LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen104
-\Fld@menulength=\count93
-\Field@Width=\dimen105
-\Fld@charsize=\dimen106
+\XeTeXLinkMargin=\dimen113
+\Fld@menulength=\count105
+\Field@Width=\dimen114
+\Fld@charsize=\dimen115
 Package hyperref Info: Hyper figures OFF on input line 6369.
 Package hyperref Info: Link nesting OFF on input line 6374.
 Package hyperref Info: Hyper index ON on input line 6377.
@@ -188,23 +246,23 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count94
-\c@Item=\count95
-\c@Hfootnote=\count96
+\Hy@abspage=\count106
+\c@Item=\count107
+\c@Hfootnote=\count108
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count97
-\c@bookmark@seq@number=\count98
+\Fld@listcount=\count109
+\c@bookmark@seq@number=\count110
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip57
+\Hy@SectionHShift=\skip60
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -223,8 +281,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen107
-\Gin@req@width=\dimen108
+\Gin@req@height=\dimen116
+\Gin@req@width=\dimen117
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
@@ -483,6 +541,10 @@ LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 186.
 LaTeX Font Info:    Redeclaring math symbol \varvarrho on input line 187.
 LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 210.
 LaTeX Font Info:    Redeclaring math delimiter \vert on input line 215.
+LaTeX Font Info:    Redeclaring math delimiter \lvert on input line 217.
+LaTeX Font Info:    Redeclaring math delimiter \rvert on input line 219.
+LaTeX Font Info:    Redeclaring math delimiter \lVert on input line 221.
+LaTeX Font Info:    Redeclaring math delimiter \rVert on input line 223.
 LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 225.
 LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 227.
 LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 229.
@@ -516,74 +578,16 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count99
-\U@D=\dimen109
+\babel@savecnt=\count111
+\U@D=\dimen118
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count100
+\bbl@dirlevel=\count112
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip58
-
-For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks15
-\ex@=\dimen110
-))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen111
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
-)
-\inf@bad=\count101
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count102
-\leftroot@=\count103
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count104
-\DOTSCASE@=\count105
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box28
-\strutbox@=\box29
-\big@size=\dimen112
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count106
-\c@MaxMatrixCols=\count107
-\dotsspace@=\muskip11
-\c@parentequation=\count108
-\dspbrk@lvl=\count109
-\tag@help=\toks16
-\row@=\count110
-\column@=\count111
-\maxfields@=\count112
-\andhelp@=\toks17
-\eqnshift@=\dimen113
-\alignsep@=\dimen114
-\tagshift@=\dimen115
-\tagwidth@=\dimen116
-\totwidth@=\dimen117
-\lineht@=\dimen118
-\@envbody=\toks18
-\multlinegap=\skip59
-\multlinetaggap=\skip60
-\mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
-)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup6
@@ -963,7 +967,7 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              `\addtokomafont' for the page style elements need
 (scrartcl)              explicite user intervention to work.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `fancyhdr' on input line 60.
+(scrartcl)              package `fancyhdr' on input line 61.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
@@ -995,57 +999,57 @@ LaTeX Warning: Label `fig:skip-gram' multiply defined.
 )
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 98.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 99.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 99.
 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 98.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 99.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 99.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 98.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 99.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 99.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 98.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 99.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 98.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 99.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 98.
+Package hyperref Info: Link coloring OFF on input line 99.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1055,9 +1059,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 98.
-LaTeX Info: Redefining \pageref on input line 98.
-LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
 
 (./paper.out) (./paper.out)
 \@outlinefile=\write4
@@ -1099,36 +1103,36 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count150
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 101.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 102.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 10
-1.
+2.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 15.89755pt on input line 101.
+(Font)              scaled to size 15.89755pt on input line 102.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 101.
+(Font)              scaled to size 11.03998pt on input line 102.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 101.
+(Font)              scaled to size 8.27998pt on input line 102.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 15.89755pt on input line 101.
+(Font)              scaled to size 15.89755pt on input line 102.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 101.
+(Font)              scaled to size 11.03998pt on input line 102.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 101.
-LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+(Font)              scaled to size 8.27998pt on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1136,32 +1140,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <google.png, id=51, 635.37375pt x 336.25626pt>
 File: google.png Graphic file (type png)
 <use google.png>
-Package pdftex.def Info: google.png  used on input line 103.
+Package pdftex.def Info: google.png  used on input line 104.
 (pdftex.def)             Requested size: 448.13095pt x 237.16844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
 
  []
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 114.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 115.
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
@@ -1170,51 +1174,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--116
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 117.
+(Font)              scaled to size 6.43999pt on input line 118.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 117.
+(Font)              scaled to size 6.43999pt on input line 118.
 <vectors.png, id=61, 598.235pt x 406.51875pt>
 File: vectors.png Graphic file (type png)
 <use vectors.png>
-Package pdftex.def Info: vectors.png  used on input line 119.
+Package pdftex.def Info: vectors.png  used on input line 120.
 (pdftex.def)             Requested size: 448.13095pt x 304.52232pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--125
+Underfull \hbox (badness 10000) in paragraph at lines 118--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--125
+Underfull \hbox (badness 10000) in paragraph at lines 118--126
 
  []
 
 <bow.png, id=63, 454.69875pt x 303.1325pt>
 File: bow.png Graphic file (type png)
 <use bow.png>
-Package pdftex.def Info: bow.png  used on input line 136.
+Package pdftex.def Info: bow.png  used on input line 137.
 (pdftex.def)             Requested size: 448.13095pt x 298.7561pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--144
+Underfull \hbox (badness 10000) in paragraph at lines 128--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--144
+Underfull \hbox (badness 10000) in paragraph at lines 128--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--144
+Underfull \hbox (badness 10000) in paragraph at lines 128--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--144
+Underfull \hbox (badness 10000) in paragraph at lines 128--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--144
+Underfull \hbox (badness 10000) in paragraph at lines 128--145
 
  []
 
@@ -1227,128 +1231,128 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [2 <./google.png>] [3 <./vectors.png>] [4 <./bow.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 161.
+               Default added (so using `tbp') on input line 162.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--170
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--170
+Underfull \hbox (badness 10000) in paragraph at lines 151--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--170
+Underfull \hbox (badness 10000) in paragraph at lines 151--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--170
+Underfull \hbox (badness 10000) in paragraph at lines 151--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--170
+Underfull \hbox (badness 10000) in paragraph at lines 151--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--171
 
  []
 
 <nnlm.png, id=83, 669.50125pt x 433.62pt>
 File: nnlm.png Graphic file (type png)
 <use nnlm.png>
-Package pdftex.def Info: nnlm.png  used on input line 172.
+Package pdftex.def Info: nnlm.png  used on input line 173.
 (pdftex.def)             Requested size: 448.13095pt x 290.25261pt.
 <Autoencoder_structure.png, id=84, 679.53876pt x 507.8975pt>
 File: Autoencoder_structure.png Graphic file (type png)
 <use Autoencoder_structure.png>
-Package pdftex.def Info: Autoencoder_structure.png  used on input line 179.
+Package pdftex.def Info: Autoencoder_structure.png  used on input line 180.
 (pdftex.def)             Requested size: 448.13095pt x 334.94214pt.
 [5]
-LaTeX Font Info:    Try loading font information for U+euf on input line 189.
+LaTeX Font Info:    Try loading font information for U+euf on input line 190.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
 [6 <./nnlm.png>] [7 <./Autoencoder_structure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--210
+Underfull \hbox (badness 10000) in paragraph at lines 202--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--210
+Underfull \hbox (badness 10000) in paragraph at lines 202--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--231
+Underfull \hbox (badness 10000) in paragraph at lines 228--232
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 233--240
+Underfull \hbox (badness 10000) in paragraph at lines 234--241
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--240
+Underfull \hbox (badness 10000) in paragraph at lines 234--241
 
  []
 
 <neuralnet.png, id=113, 553.06625pt x 489.83pt>
 File: neuralnet.png Graphic file (type png)
 <use neuralnet.png>
-Package pdftex.def Info: neuralnet.png  used on input line 253.
+Package pdftex.def Info: neuralnet.png  used on input line 254.
 (pdftex.def)             Requested size: 448.13095pt x 396.88718pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--259
+Underfull \hbox (badness 10000) in paragraph at lines 251--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--259
+Underfull \hbox (badness 10000) in paragraph at lines 251--260
 
  []
 
 [9] [10 <./neuralnet.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 261--264
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 277.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 278.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 285--289
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--289
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--289
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
 
  []
 
@@ -1356,90 +1360,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 285--289
 <cbow.jpg, id=130, 322.20375pt x 251.94125pt>
 File: cbow.jpg Graphic file (type jpg)
 <use cbow.jpg>
-Package pdftex.def Info: cbow.jpg  used on input line 291.
+Package pdftex.def Info: cbow.jpg  used on input line 292.
 (pdftex.def)             Requested size: 322.20296pt x 251.94063pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--298
+Underfull \hbox (badness 10000) in paragraph at lines 296--299
 
  []
 
 <skip-gram.jpg, id=131, 261.97874pt x 241.90375pt>
 File: skip-gram.jpg Graphic file (type jpg)
 <use skip-gram.jpg>
-Package pdftex.def Info: skip-gram.jpg  used on input line 300.
+Package pdftex.def Info: skip-gram.jpg  used on input line 301.
 (pdftex.def)             Requested size: 261.9781pt x 241.90315pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
 
  []
 
 [12 <./cbow.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 319--322
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
 
  []
 
 <softmax.png, id=137, 379.4175pt x 200.75pt>
 File: softmax.png Graphic file (type png)
 <use softmax.png>
-Package pdftex.def Info: softmax.png  used on input line 325.
+Package pdftex.def Info: softmax.png  used on input line 326.
 (pdftex.def)             Requested size: 379.41656pt x 200.7495pt.
 
-Overfull \hbox (3.21025pt too wide) in paragraph at lines 323--332
+Overfull \hbox (3.21025pt too wide) in paragraph at lines 324--333
 [] []\T1/futs/m/sc/12 Hierarchical Soft-max[][] \T1/futs/m/n/12 This model in n
 at-u-ral prob-a-bilis-tic lan-guage was firstly pro-posed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--332
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--332
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--332
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
 
  []
 
-[13 <./skip-gram.jpg>] [14 <./softmax.png>]
+[13 <./skip-gram.jpg>] [14 <./softmax.png>] [15]
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
 (scrartcl)              from within a non compatible caller, that does not
 (scrartcl)              \scr@s@ct@@nn@m@ locally.
 (scrartcl)              This could result in several error messages on input li
-ne 343.
+ne 363.
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 345--346
+Underfull \hbox (badness 1231) in paragraph at lines 365--366
 \T1/futs/m/n/12 <http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/photoelec.ht
 ml>, ac-cessed 26
  []
 
-[15
+[16
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 371.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 371.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 371.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 371.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 72183D2F3844791C01A4650937C61011;888.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 371.
  ) 
 Here is how much of TeX's memory you used:
- 22326 strings out of 492649
- 407999 string characters out of 6129622
- 671736 words of memory out of 5000000
- 25733 multiletter control sequences out of 15000+600000
+ 22328 strings out of 492649
+ 408024 string characters out of 6129622
+ 671896 words of memory out of 5000000
+ 25734 multiletter control sequences out of 15000+600000
  110125 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,12n,60p,9084b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1454,10 +1458,10 @@ xlive/2018/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2018/tex
 mf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2018/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on paper.pdf (15 pages, 1049735 bytes).
+Output written on paper.pdf (16 pages, 1052520 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
