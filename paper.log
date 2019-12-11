@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.12)  12 DEC 2019 08:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.12)  12 DEC 2019 10:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1154,7 +1154,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<google.png, id=79, 635.37375pt x 336.25626pt>
+<google.png, id=83, 635.37375pt x 336.25626pt>
 File: google.png Graphic file (type png)
 <use google.png>
 Package pdftex.def Info: google.png  used on input line 105.
@@ -1194,7 +1194,7 @@ LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 119.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 119.
-<vectors.png, id=89, 598.235pt x 406.51875pt>
+<vectors.png, id=93, 598.235pt x 406.51875pt>
 File: vectors.png Graphic file (type png)
 <use vectors.png>
 Package pdftex.def Info: vectors.png  used on input line 121.
@@ -1209,7 +1209,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--127
 
  []
 
-<bow.png, id=91, 454.69875pt x 303.1325pt>
+<bow.png, id=95, 454.69875pt x 303.1325pt>
 File: bow.png Graphic file (type png)
 <use bow.png>
 Package pdftex.def Info: bow.png  used on input line 138.
@@ -1275,12 +1275,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--172
 
  []
 
-<nnlm.png, id=111, 669.50125pt x 433.62pt>
+<nnlm.png, id=115, 669.50125pt x 433.62pt>
 File: nnlm.png Graphic file (type png)
 <use nnlm.png>
 Package pdftex.def Info: nnlm.png  used on input line 174.
 (pdftex.def)             Requested size: 448.13095pt x 290.25261pt.
-<Autoencoder_structure.png, id=112, 679.53876pt x 507.8975pt>
+<Autoencoder_structure.png, id=116, 679.53876pt x 507.8975pt>
 File: Autoencoder_structure.png Graphic file (type png)
 <use Autoencoder_structure.png>
 Package pdftex.def Info: Autoencoder_structure.png  used on input line 181.
@@ -1334,7 +1334,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--242
 
  []
 
-<neuralnet.png, id=141, 553.06625pt x 489.83pt>
+<neuralnet.png, id=145, 553.06625pt x 489.83pt>
 File: neuralnet.png Graphic file (type png)
 <use neuralnet.png>
 Package pdftex.def Info: neuralnet.png  used on input line 255.
@@ -1374,7 +1374,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--291
  []
 
 [11]
-<cbow.jpg, id=158, 322.20375pt x 251.94125pt>
+<cbow.jpg, id=162, 322.20375pt x 251.94125pt>
 File: cbow.jpg Graphic file (type jpg)
 <use cbow.jpg>
 Package pdftex.def Info: cbow.jpg  used on input line 293.
@@ -1384,7 +1384,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--300
 
  []
 
-<skip-gram.jpg, id=159, 261.97874pt x 241.90375pt>
+<skip-gram.jpg, id=163, 261.97874pt x 241.90375pt>
 File: skip-gram.jpg Graphic file (type jpg)
 <use skip-gram.jpg>
 Package pdftex.def Info: skip-gram.jpg  used on input line 302.
@@ -1399,7 +1399,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 321--324
 
  []
 
-<softmax.png, id=165, 379.4175pt x 200.75pt>
+<softmax.png, id=169, 379.4175pt x 200.75pt>
 File: softmax.png Graphic file (type png)
 <use softmax.png>
 Package pdftex.def Info: softmax.png  used on input line 327.
@@ -1430,7 +1430,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 357--359
 
  []
 
-<word2vectorresult.png, id=180, 661.47125pt x 357.335pt>
+<word2vectorresult.png, id=184, 661.47125pt x 357.335pt>
 File: word2vectorresult.png Graphic file (type png)
 <use word2vectorresult.png>
 Package pdftex.def Info: word2vectorresult.png  used on input line 367.
@@ -1469,7 +1469,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 377--379
 
  []
 
-<ELMo.png, id=188, 679.53876pt x 287.0725pt>
+<ELMo.png, id=192, 679.53876pt x 287.0725pt>
 File: ELMo.png Graphic file (type png)
 <use ELMo.png>
 Package pdftex.def Info: ELMo.png  used on input line 382.
@@ -1504,7 +1504,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--410
 
  []
 
-<elmoprocee.png, id=195, 679.53876pt x 287.0725pt>
+<elmoprocee.png, id=199, 679.53876pt x 287.0725pt>
 File: elmoprocee.png Graphic file (type png)
 <use elmoprocee.png>
 Package pdftex.def Info: elmoprocee.png  used on input line 415.
@@ -1514,7 +1514,7 @@ Overfull \hbox (27.54294pt too wide) in paragraph at lines 415--416
 [][] 
  []
 
-<elmofunction.png, id=196, 680.5425pt x 235.88126pt>
+<elmofunction.png, id=200, 680.5425pt x 235.88126pt>
 File: elmofunction.png Graphic file (type png)
 <use elmofunction.png>
 Package pdftex.def Info: elmofunction.png  used on input line 430.
@@ -1550,77 +1550,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 412--434
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
+Underfull \hbox (badness 10000) in paragraph at lines 435--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
+Underfull \hbox (badness 10000) in paragraph at lines 435--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
+Underfull \hbox (badness 10000) in paragraph at lines 435--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--439
+Underfull \hbox (badness 10000) in paragraph at lines 435--442
 
  []
 
 [18 <./elmoprocee.png>]
-<bertinput.png, id=208, 958.58125pt x 283.0575pt>
+Underfull \hbox (badness 10000) in paragraph at lines 444--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--448
+
+ []
+
+<bertinput.png, id=212, 958.58125pt x 283.0575pt>
 File: bertinput.png Graphic file (type png)
 <use bertinput.png>
-Package pdftex.def Info: bertinput.png  used on input line 443.
+Package pdftex.def Info: bertinput.png  used on input line 450.
 (pdftex.def)             Requested size: 508.04565pt x 150.01974pt.
 
-Overfull \hbox (59.9147pt too wide) in paragraph at lines 443--444
+Overfull \hbox (59.9147pt too wide) in paragraph at lines 450--451
 [][] 
  []
 
-[19 <./elmofunction.png> <./bertinput.png>]
+[19 <./elmofunction.png>] [20 <./bertinput.png>]
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
 (scrartcl)              from within a non compatible caller, that does not
 (scrartcl)              \scr@s@ct@@nn@m@ locally.
 (scrartcl)              This could result in several error messages on input li
-ne 454.
+ne 461.
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 456--457
+Underfull \hbox (badness 1231) in paragraph at lines 463--464
 \T1/futs/m/n/12 <http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/photoelec.ht
 ml>, ac-cessed 26
  []
 
-[20
+[21
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 462.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 462.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 462.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 462.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: A78197C3B81099FDE38B436F92F8484E;1471.
+(rerunfilecheck)             Checksum: CD4502F7B00858B6996CFB568FBFD5A4;1558.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 462.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
  ) 
 Here is how much of TeX's memory you used:
- 22381 strings out of 492649
- 408871 string characters out of 6129622
- 674933 words of memory out of 5000000
- 25766 multiletter control sequences out of 15000+600000
+ 22384 strings out of 492649
+ 408918 string characters out of 6129622
+ 675036 words of memory out of 5000000
+ 25767 multiletter control sequences out of 15000+600000
  110125 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,14n,60p,9084b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1636,10 +1645,10 @@ live/2018/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2018/texm
 f-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on paper.pdf (20 pages, 2051947 bytes).
+Output written on paper.pdf (21 pages, 2055227 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 
