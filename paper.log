@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.12)  12 DEC 2019 04:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.12)  12 DEC 2019 05:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,6 +996,9 @@ LaTeX Warning: Label `fig:nnlm' multiply defined.
 
 LaTeX Warning: Label `fig:skip-gram' multiply defined.
 
+
+LaTeX Warning: Label `fig:skip-gram' multiply defined.
+
 )
 \openout1 = `paper.aux'.
 
@@ -1137,7 +1140,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<google.png, id=51, 635.37375pt x 336.25626pt>
+<google.png, id=71, 635.37375pt x 336.25626pt>
 File: google.png Graphic file (type png)
 <use google.png>
 Package pdftex.def Info: google.png  used on input line 104.
@@ -1177,7 +1180,7 @@ LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 118.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 118.
-<vectors.png, id=61, 598.235pt x 406.51875pt>
+<vectors.png, id=81, 598.235pt x 406.51875pt>
 File: vectors.png Graphic file (type png)
 <use vectors.png>
 Package pdftex.def Info: vectors.png  used on input line 120.
@@ -1192,7 +1195,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--126
 
  []
 
-<bow.png, id=63, 454.69875pt x 303.1325pt>
+<bow.png, id=83, 454.69875pt x 303.1325pt>
 File: bow.png Graphic file (type png)
 <use bow.png>
 Package pdftex.def Info: bow.png  used on input line 137.
@@ -1258,12 +1261,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--171
 
  []
 
-<nnlm.png, id=83, 669.50125pt x 433.62pt>
+<nnlm.png, id=103, 669.50125pt x 433.62pt>
 File: nnlm.png Graphic file (type png)
 <use nnlm.png>
 Package pdftex.def Info: nnlm.png  used on input line 173.
 (pdftex.def)             Requested size: 448.13095pt x 290.25261pt.
-<Autoencoder_structure.png, id=84, 679.53876pt x 507.8975pt>
+<Autoencoder_structure.png, id=104, 679.53876pt x 507.8975pt>
 File: Autoencoder_structure.png Graphic file (type png)
 <use Autoencoder_structure.png>
 Package pdftex.def Info: Autoencoder_structure.png  used on input line 180.
@@ -1317,7 +1320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--241
 
  []
 
-<neuralnet.png, id=113, 553.06625pt x 489.83pt>
+<neuralnet.png, id=133, 553.06625pt x 489.83pt>
 File: neuralnet.png Graphic file (type png)
 <use neuralnet.png>
 Package pdftex.def Info: neuralnet.png  used on input line 254.
@@ -1357,7 +1360,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--290
  []
 
 [11]
-<cbow.jpg, id=130, 322.20375pt x 251.94125pt>
+<cbow.jpg, id=150, 322.20375pt x 251.94125pt>
 File: cbow.jpg Graphic file (type jpg)
 <use cbow.jpg>
 Package pdftex.def Info: cbow.jpg  used on input line 292.
@@ -1367,7 +1370,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--299
 
  []
 
-<skip-gram.jpg, id=131, 261.97874pt x 241.90375pt>
+<skip-gram.jpg, id=151, 261.97874pt x 241.90375pt>
 File: skip-gram.jpg Graphic file (type jpg)
 <use skip-gram.jpg>
 Package pdftex.def Info: skip-gram.jpg  used on input line 301.
@@ -1382,7 +1385,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--323
 
  []
 
-<softmax.png, id=137, 379.4175pt x 200.75pt>
+<softmax.png, id=157, 379.4175pt x 200.75pt>
 File: softmax.png Graphic file (type png)
 <use softmax.png>
 Package pdftex.def Info: softmax.png  used on input line 326.
@@ -1408,42 +1411,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 324--333
 
  []
 
-[13 <./skip-gram.jpg>] [14 <./softmax.png>] [15]
+[13 <./skip-gram.jpg>] [14 <./softmax.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
+
+ []
+
+<word2vectorresult.png, id=172, 661.47125pt x 357.335pt>
+File: word2vectorresult.png Graphic file (type png)
+<use word2vectorresult.png>
+Package pdftex.def Info: word2vectorresult.png  used on input line 366.
+(pdftex.def)             Requested size: 463.02672pt x 250.13278pt.
+
+Overfull \hbox (14.89577pt too wide) in paragraph at lines 366--367
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--375
+
+ []
+
+
+Overfull \hbox (9.02399pt too wide) in paragraph at lines 370--375
+\T1/futs/m/n/12 The re-sult of \T1/cmtt/m/n/12 France + Paris - Being \T1/futs/
+m/n/12 would be equal or very close to the value of \T1/cmtt/m/n/12 Beijing\T1/
+futs/m/n/12 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--375
+
+ []
+
+[15 <./word2vectorresult.png>] [16]
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
 (scrartcl)              from within a non compatible caller, that does not
 (scrartcl)              \scr@s@ct@@nn@m@ locally.
 (scrartcl)              This could result in several error messages on input li
-ne 363.
+ne 387.
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 365--366
+Underfull \hbox (badness 1231) in paragraph at lines 389--390
 \T1/futs/m/n/12 <http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/photoelec.ht
 ml>, ac-cessed 26
  []
 
-[16
+[17
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 371.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 371.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 395.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 395.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 371.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 371.
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 72183D2F3844791C01A4650937C61011;888.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 395.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 395.
 
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 00CC7B69D3F5C295C1EF462F941CF4AE;1184
+(rerunfilecheck)             After:  0AB16352A5AB391CF790F453A6C5AB9C;1227.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 371.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 395.
  ) 
 Here is how much of TeX's memory you used:
- 22328 strings out of 492649
- 408024 string characters out of 6129622
+ 22349 strings out of 492649
+ 408368 string characters out of 6129622
  671896 words of memory out of 5000000
- 25734 multiletter control sequences out of 15000+600000
+ 25747 multiletter control sequences out of 15000+600000
  110125 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,12n,60p,9084b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1458,10 +1499,10 @@ xlive/2018/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2018/tex
 mf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2018/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on paper.pdf (16 pages, 1052520 bytes).
+Output written on paper.pdf (17 pages, 1232940 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 237 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -353,7 +353,31 @@ Also
 \sum^W_{w = 1} p(w | w_I) = 1
 \end{align*}
 The above fomulas indicates that the computational cost is proportional to $L(w_O)$, which on average is smaller than $logW$.
-\subparagraph{Negative Sampling} This model has another name called \textbf{Noise Contrastive Estimation (NCE)}
+\subparagraph{Negative Sampling} This model has another name called \textbf{Noise Contrastive Estimation (NCE)}, and it was introduced by Gutmann and Hyvarinen.\\\\
+NCE is roughly a maximum of log probability of the softmax that defines as follows:
+\begin{align*}
+log \sigma (x_{w_O}^{T} v_{w_I}) + \sum^{k}_{i = 1} \mathbb{E}_{w_i}~P_n(w) [log \sigma (-x_{w_O}^{T} v_{w_I}) ]
+\end{align*}
+$P_n(w)$ is a noise distribution serving as a free parameter in the above formula. 
+Mikolov has observed a number
+of choices for Pn(w) and found that the unigram distribution U(w) raised to the 3/4rd power(i.e.,$U(w)^{3/4}/Z$) outperformed significantly the unigram and the uniform distributions.
+\subsubsection{Results of Word2Vec}
+ \begin{figure}
+  \includegraphics[scale=0.7]{word2vectorresult.png}
+  \caption{Vector Space of Word2Vec}
+  \label{fig:skip-gram}
+\end{figure}
+Figure 10 shows that \textbf{Word2Vec} can be successful in creating the vector representation of a word, for example, \texttt{king} and \texttt{queen} has a closer Euclidean distance, and a smaller angle in-between.\\\\
+Moreover, with vector representation of a word, we can write formula based off words. For instance: \\
+\texttt{France + Paris - Being = China} \\
+The result of \texttt{France + Paris - Being} would be equal or very close to the value of   \texttt{Beijing}. \\\\
+Isn't that interesting?
+\subsection{Global Vectors for Word Representation (GloVe)}
+This model is highly similar to \textbf{Word2Vec} introduced above. 
+
+\subsection{ELMo}
+\subsection{BERT}
+\section{Question Answering}
 
 
 
