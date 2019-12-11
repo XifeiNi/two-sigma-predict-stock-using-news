@@ -196,8 +196,33 @@ This image $\mathbf{h}$ is the code section shown in Figure 5. $\delta$ is norma
 S(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x + 1}
 \end{align*}
 $\mathbf{W}$ is a weight matrix and $\mathbf{b}$ is a bias vector. The initializations of these two variables are random. They will be learnt iteratively through \textbf{backpropagation}. \\
-
-
+\begin{align*}
+\mathbf{h'} = \sigma (\mathbf{W'}x + \mathbf{b'})
+\end{align*}
+The backpropagation computes weight space $\mathbf{W}$ and bias vector $b$ with respect of a loss function $\mathbb{C}$.\\\\
+$x$ : input (vector of features). \\
+$x'$ : target output, the closer to $x$, the better. \\
+$\mathbb{C}$: loss function, which intuitively associate with the "cost" of certain event or representation. The aim of training is to minimize the loss function. \\
+$L$: the number of layers. In the above example, L equals to 1. However, here we aims to provide a generalized form.\\
+$W^l = W^l_{j_k}$: the weights between layer  $l-1$ and $l$, where $W^l_{j_k}$ is the weight between the k-th node in layer $l$-1 and the $j$-th node in layer $l$.\\
+$f^l$: sigmoid function at layer $l$.\\
+The whole neural network can be represented by this function:\\
+\begin{align*}
+g(x) = f^{L}(W^Lf^{L-1}(W^{L-1}...f^1(W^1*x)...)
+\end{align*}
+For each input $x_i$, there will be an output $x'_i$ corresponding with it. the loss of the model on that pair is the cost of the difference between the predicted output $g(x_i)$  and the target output $x'_i$:\\
+\begin{align*}
+\mathbb{C}(y_i, f^{L}(W^Lf^{L-1}(W^{L-1}...f^1(W^1*x)...))
+\end{align*}
+For each layer, we compute the minimum of the loss function by calculating its derivatives. 
+\begin{align*}
+\frac{\partial \mathbb{C}}{\partial W^l_{j_k}}
+\end{align*}
+Where the loss function is defined as: 
+\begin{align*}
+\mathbb{C}(x, x') = \lvert x - x'\rvert^2 = \lvert x - \sigma'(\mathbf{W}'(\sigma (\mathbf{W}x + b)) + b' \rvert
+\end{align*}
+where $x$ is the average across all inputs.
 \subsubsection{Neural Network Language Model (NNLM)}
 
 \subsection{Fourth Attempt: Non-NN Model}
