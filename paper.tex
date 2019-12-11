@@ -373,10 +373,19 @@ Moreover, with vector representation of a word, we can write formula based off w
 The result of \texttt{France + Paris - Being} would be equal or very close to the value of   \texttt{Beijing}. \\\\
 Isn't that interesting?
 \subsection{Global Vectors for Word Representation (GloVe)}
-This model is highly similar to \textbf{Word2Vec} introduced above. 
+This model is highly similar to \textbf{Word2Vec} introduced above. The only difference is \textbf{Word2Vec} looks for limited set of context surrounding the certain word, while \textbf{GloVe} calculates based on the whole document. Its training is performed on aggregated global word-word co-occurrence statistics from the corpus. Therefore, \textbf{GloVe} can only be offline, which is its main drawback. \\\\
+This algorithm isn't used that frequently as the relevance between a word and its whole document is quite limited. 
 
-\subsection{ELMo}
-\subsection{BERT}
+\subsection{Embedding from Language Model (ELMo)}
+All the above models does not consider words with multiple meanings. Peters published a paper in 2018 of deep contextualized word representation that models complex characteristics of word use and how these uses vary across linguistic context. \\\\
+Remarkably, previous models, after training, get constant vectors, while \textbf{ELMo} only gets a pre-trained vector. And the final output will be calculated after fine-tuning. So \textbf{ELMo} changes NLP from static to dynamic! \\\\
+Given a sequence of $N$ tokens, $(t_1, t_2, t_3, ... t_N)$, we propose a forward language model that computes the probabilities of the sequence $t_k$ given all the history token $(t_1, t_2, t_3, ... t_k)$. 
+\begin{align*}
+p(t_1, t_2, t_3, ... t_N) = \prod^N_{k = 1} p(t_k | t_1, t_2, ... ,t_{k-1})
+\end{align*}
+The forward: \textbf{ELMo} uses LSTM layer to compute output. At the forward direction, for each position $k$, each LSTM layer outputs a context dependent representation $\vec{\mathbf{h}^{L,M}_{k, j}}$
+\subsection{Bidirectional Encoder Representation from Transformer (BERT)}
+
 \section{Question Answering}
 
 
