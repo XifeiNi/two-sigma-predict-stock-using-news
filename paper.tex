@@ -442,15 +442,17 @@ The number of self-attention heads as $A$.
 \subsubsection{Transformer}
 \subsubsection{Input/Output Representation}
 The input of \textbf{BERT} can be both a sentence or a set of sentences, which is an arbitrary continuous text. \\\\
-Then \textbf{BERT} uses WordPiece embeddings with a 30,000-token library. The first token of every sequence is always a  special classification token (\texttt{[CLS]}). The final hidden state corresponding to this token is used as the aggregate sequence representation for classification tasks. Sentence pairs are packed together into a single sequence. \textbf{BERT} differentiate the sentences in two ways. \\\\
- First, we separate them with a special token (\texttt{[SEP]}). Second, we add a learned embedding to every token indicating whether it belongs to sentence \texttt{A} or sentence \texttt{B}. \\\\
- As shown in \textbf{Figure 14}, we denote the input embedding as \texttt{E}, the final hidden vector of the special \texttt{[CLS]} for the $i$-th input token as $T_i \in \mathbb{R}$
+Then \textbf{BERT} uses WordPiece embeddings with a 30,000-token library. The first token of a sequence is normally a special classification token (\texttt{[CLS]}). The final hidden state of this token is used as the "aggregate sequence representation for classification tasks". Sentence pairs are packed together into a single sequence. \textbf{BERT} differentiate the sentences in two ways. \\\\
+ First, \textbf{BERT} separate them with a special token (\texttt{[SEP]}). Second, \textbf{BERT} adds a learned embedding to every token implying the sentence it belongs, be it sentence \texttt{A} or sentence \texttt{B}. \\\\
+As shown in \textbf{Figure 14}, \textbf{BERT} denotes the input embedding as \texttt{E}, the final hidden vector of the special \texttt{[CLS]} for the $i$-th input token as $T_i \in \mathbb{R}^H$
 \subsubsection{Masked Language Model}
  \begin{figure}
   \includegraphics[scale=0.53]{bertinput.png}
   \caption{BERT input representation. The input embeddings are the sum of the token embeddings, the segmentation embeddings and the position embeddings.}
   \label{fig:skip-gram}
 \end{figure}
+Intuitively,  it is quite obvious that a bi-directional NLP model is better than models that purely considers left-to-right or right-to-left. Sadly, the conditional probability determines that the direction is either left-to-right or right-to-left. A bidirectional model requires the words to be predicted to see itself. \\\\
+How \textbf{BERT} solves this problem is using a \textbf{Masked Language Model} (Masked LM in short)
 \section{Question Answering}
 
 
