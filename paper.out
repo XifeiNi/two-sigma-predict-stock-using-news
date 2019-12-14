@@ -16,4 +16,7 @@
 \BOOKMARK [3][-]{subsubsection.2.7.1}{Transformer}{subsection.2.7}% 16
 \BOOKMARK [3][-]{subsubsection.2.7.2}{Input/Output Representation}{subsection.2.7}% 17
 \BOOKMARK [3][-]{subsubsection.2.7.3}{Masked Language Model}{subsection.2.7}% 18
-\BOOKMARK [1][-]{section.3}{Question Answering}{}% 19
+\BOOKMARK [3][-]{subsubsection.2.7.4}{Next Sentence Predication \(LSP\)}{subsection.2.7}% 19
+\BOOKMARK [3][-]{subsubsection.2.7.5}{Fine tuning BERT}{subsection.2.7}% 20
+\BOOKMARK [1][-]{section.3}{Question Answering}{}% 21
+\BOOKMARK [1][-]{section.4}{Reference}{}% 22

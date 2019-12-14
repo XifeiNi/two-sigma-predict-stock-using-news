@@ -452,19 +452,64 @@ As shown in \textbf{Figure 14}, \textbf{BERT} denotes the input embedding as \te
   \label{fig:skip-gram}
 \end{figure}
 Intuitively,  it is quite obvious that a bi-directional NLP model is better than models that purely considers left-to-right or right-to-left. Sadly, the conditional probability determines that the direction is either left-to-right or right-to-left. A bidirectional model requires the words to be predicted to see itself. \\\\
-How \textbf{BERT} solves this problem is using a \textbf{Masked Language Model} (Masked LM in short)
+How \textbf{BERT} solves this problem is using a \textbf{Masked Language Model} (Masked LM in short). They mask random random tokens in the sequence, and the try to predict that. Unlike autoencoder that we elaborated above, \textbf{BERT} only predicts the masked words rather than reconstructing the entire input. \\\\
+To address the difference between the pre-training and the fine-tuning stages, because of the mismatches created by words being replaced by \texttt{[MASK]}\\\\
+Empirically, \textbf{BERT} randomly selects 15 \% of tokens as \texttt{[MASK]}, then only actually replace them with \texttt{[MASK]} in 80\%. Then, $T_i$ will be used to predict the original token with cross entropy loss.
+\subsubsection{Next Sentence Predication (LSP)} 
+A lot of important tasks in NLP such as \textbf{Question Answering} (QA), and \textbf{Natural Language Inference (NLI)} are grounded on the understanding of the \textit{relationship} between sentences. \\\\
+Supposing that we have a sentence \texttt{A}, and a sentence \texttt{B} in the pre-training set, there's 50\% of the time where \texttt{B} is actually the sentence following \texttt{A}, in which case we mark \texttt{B} as \texttt{IsNext}, and for the rest of the times, \texttt{B} is just some random sentences from the document that bears no relationship with \texttt{A}-- in this case, we mark \texttt{B} as \texttt{NotNext}.
+ \begin{figure}
+  \includegraphics[scale=0.40]{bertprocedure.png}
+  \caption{Overall pre-training and fine-tuning procedures for BERT. Apart from output layers, the same architectures are used in both pre-training and fine-tuning. The same pre-trained model parameters are used to initialize models for different down-stream tasks. During fine-tuning, all parameters are fine-tuned. \texttt{[CLS]} is a special symbol added in front of every input example, and \texttt{[SEP]} is a special separator token (e.g. separating questions/answers).}
+  \label{fig:skip-gram}
+\end{figure}
+\subsubsection{Fine tuning \textbf{BERT}}
+For each task, we simply plug its inputs and outputs into \textbf{BERT} and fine-tune all the parameter end-to-end. . At the output, the token representations are fed into an output layer for token level tasks, such as sequence tagging or question answering, and the \texttt{[CLS]} representation is fed into an output layer for classification, such as entailment or sentiment analysis.\\\\
+Compared to pre-training, fine-tuning is relatively inexpensive. On my MacBook, it roughly only takes one and a half hour to run.
 \section{Question Answering}
+Building a question answering system is composed of two parts: \\\\
+1. Finding documents that (potentially) contain an answer, which can be handled by traditional information retrieval \\
+2. Finding an answer in a paragraph or a document, which is the focus of this section. \\
+\textbf{The Stanford Attentive Reader} is quite successful, we will use the example below to demonstrate. \\\\
+As figure 16 shows, we firstly find the word embedding of the question: \texttt{Which team won Super Bowl 50?}. We mark the start token using the first layer of \textbf{BERT}, and the end token of the question using the second layer of \textbf{BERT}. \\
+ \begin{figure}
+  \includegraphics[scale=0.4]{q.png}
+  \caption{A modelling of an example question: Which team won Super Bowl 50?}
+  \label{fig:skip-gram}
+\end{figure}
+Then we aims to find the word embedding of the passage that contains the answer from the passage. \\
+Then we calculate the attention score for each of the token in the paragraph, and define the start token of our output answer as 
+\begin{align*}
+a_i = softmax(\mathbf{q}^T \mathbf{W}_s \hat{p_i})
+\end{align*}
+the end token of our output answer as
+\begin{align*}
+a_i = softmax(\mathbf{q}^T \mathbf{W}_s' \hat{p_i})
+\end{align*}
+So why aren't we looking into the middle of the answer? When we are training, the stuff that are useful in the middle is already considered. And the vectors $W_s$ and $W_s'$ have taken account this. \\\\
+ \begin{figure}
+  \includegraphics[scale=0.6]{a.png}
+  \caption{A modelling of an example paragraph}
+  \label{fig:skip-gram}
+\end{figure}
+The intuitive training goal is to maximize the probability of the predicted start and end token being the actual start and end token of the answer. This can be defined as the following formula:
+\begin{align*}
+\iota = - \sum log P^{(start)} (a_{start}) - \sum log P^{(end)} (a_{end})
+\end{align*}
 
-
+The attached jupiter notebook is an implementation of the above algorithm that runs on Kaggle's server: https://www.kaggle.com/c/tensorflow2-question-answering/overview.
 
 
 \clearpage
 
-\begin{thebibliography}{99}
-\bibitem{Lectures} Prof. Mike Gal, "Physical waves", Lectures, {\em UNSW: PHYS1241}
-\bibitem{Workfunctions} R Nave, ''Work Functions for Photoelectric Effect'' {\em Hyperphysics} (2017), found at <http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/photoelec.html>, accessed 26 Oct. 2017
+\section{Reference}
+Bengio, Yoshua, et al. "A neural probabilistic language model." Journal of machine learning research 3.Feb (2003): 1137-1155.\\\\
+Mikolov, Tomas, et al. "Distributed representations of words and phrases and their compositionality." Advances in neural information processing systems. 2013.\\\\
+Pennington, Jeffrey, Richard Socher, and Christopher Manning. "Glove: Global vectors for word representation." Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP). 2014. \\\\
+Peters, Matthew E., et al. "Deep contextualized word representations." arXiv preprint arXiv:1802.05365 (2018).\\\\
+Devlin, Jacob, et al. "Bert: Pre-training of deep bidirectional transformers for language understanding." arXiv preprint arXiv:1810.04805 (2018).\\\\
+Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems. 2017.
 
-\end{thebibliography}
 
 
 
